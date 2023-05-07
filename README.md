@@ -20,7 +20,11 @@
 Основная тема приложения: интернет-магазин, который продаёт какой-то товар.
 У конечного пользователя должна быть возможность зарегистрироваться и авторизоваться в интернет-магазине, редактировать свои персональные данные, выбирать и заказывать товар.
 
-*[...gif-изображение с конечным продуктом...]*
+<p align="center">
+ <img alt="image_APP_001" src="https://github.com/coder-chekunkov/PostgreSQL-Article/blob/main/app/app/src/main/res/drawable/image_APP_001.png" width="220"/>
+ <img alt="image_APP_002" src="https://github.com/coder-chekunkov/PostgreSQL-Article/blob/main/app/app/src/main/res/drawable/image_APP_002.png" width="220"/>
+ <img alt="GIF" src="https://github.com/coder-chekunkov/PostgreSQL-Article/blob/main/app/app/src/main/res/drawable/gif-APP-001.gif" width="220"/>
+</p>
 
 ### Теория баз данных
 
@@ -68,7 +72,9 @@ PostgreSQL предоставляет множество возможносте�
 
 В первую очередь, при разработке базы данных, необходимо **составить ER-диаграмму**, которая наглядно отобразит будущую систему.
 
-[image-DB-001]
+<p align="center">
+    <img alt="image_DB_001" src="https://github.com/coder-chekunkov/PostgreSQL-Article/blob/main/app/app/src/main/res/drawable/image_DB_001.png" width="350"/>
+</p>
 
 | Таблица | Пояснение | 
 | -------- | -------- | 
@@ -522,6 +528,106 @@ data class PersonalDataEntity(
 ```
 
 Я надеюсь, основная концепция работы библиотеки понятна. Далее в данной статье будут приводиться только сущности, которые приходят с сервера, API-методы и методы репозиториев. 
+
+***Редактирование персональных данных пользователя.***
+
+```kotlin
+// Сущность для редактирования персональных данных пользователя:
+data class EditPersonalDataEntity(
+    @SerializedName("firstName") var firstName: String,
+    @SerializedName("lastName") var lastName: String? = null,
+    @SerializedName("middleName") var middleName: String? = null
+)
+```
+
+```kotlin
+    // API-метод, который делает запрос на редактирование:
+    @PATCH("users/edit/{user_id}")
+    suspend fun editUserPersonalData(
+        @Header("Authorization") accessToken: String,
+        @Path("user_id") userId: Long,
+        @Body newUserData: EditPersonalDataEntity
+    ): PersonalDataEntity
+```
+
+```kotlin
+    // Метод UserServerRepository, который связывается с сервером:
+    override suspend fun editPersonalData(
+        accessToken: String, firstName: String, lastName: String?, middleName: String?, userId: Long
+    ): PersonalDataEntity {
+        return withContext(Dispatchers.IO) {
+            val newUserData = EditPersonalDataEntity(
+                firstName = firstName, lastName = lastName, middleName = middleName
+            )
+
+            return@withContext userAPI.editUserPersonalData(
+                accessToken = "Bearer $accessToken", userId = userId, newUserData = newUserData
+            )
+        }
+    }
+```
+
+***Получение всех существующих продуктов для вкладки "Магазин."***
+
+```kotlin
+// Сущность одного продукта магазина:
+data class ProductEntity(
+    @SerializedName("id") var id: Long,
+    @SerializedName("name") var name: String,
+    @SerializedName("price") var price: Double,
+    @SerializedName("image") var image: String
+)
+```
+
+```kotlin
+    // API-метод, который возвращает список объектов-продуктов:
+    @GET("products")
+    suspend fun getAllProducts(@Header("Authorization") accessToken: String): List<ProductEntity>
+```
+
+```kotlin
+    // Метод ProductsServerRepository, который связывается с сервером:
+    override suspend fun getAllProducts(accessToken: String): List<ProductEntity> {
+        return withContext(Dispatchers.IO) {
+            return@withContext productsAPI.getAllProducts("Bearer $accessToken")
+        }
+    }
+```
+
+***Добавление нового продукта в корзину.***
+
+```kotlin
+// Сущность "нового продукта", добавленного в корзину:
+data class NewProductEntity(
+    @SerializedName("userId") var userId: Long,
+    @SerializedName("productId") var productId: Long
+)
+```
+
+```kotlin
+    // API-метод, который добавляет новый продукт в корзину:
+    @POST("carts/add")
+    suspend fun addNewProductInBasket(
+        @Header("Authorization") accessToken: String,
+        @Body body: NewProductEntity
+    )
+
+```
+
+```kotlin
+    // Метод ProductsServerRepository, который связывается с сервером:
+    override suspend fun addNewProductInBasket(accessToken: String, userId: Long, productId: Long) {
+        withContext(Dispatchers.IO) {
+            productsAPI.addNewProductInBasket(
+                accessToken = "Bearer $accessToken",
+                body = NewProductEntity(
+                    userId = userId,
+                    productId = productId
+                )
+            )
+        }
+    }
+```
 
 ### Заключение
 
