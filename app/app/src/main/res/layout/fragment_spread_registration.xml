@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_color"
+        android:orientation="vertical"
+        android:padding="17dp">
+
+        <TextView
+            android:id="@+id/spreadRegistrationSubtitleTextView"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/spread_registration_subtitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/valueInputNameRegistration"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/spread_registration_hint_firstname"
+            android:textCursorDrawable="@null"
+            app:boxStrokeColor="@color/dark_blue"
+            app:hintTextColor="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameRegistrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:lines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/valueInputSurnameRegistration"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/spread_registration_hint_surname"
+            app:helperText="@string/utils_optional_field"
+            android:textCursorDrawable="@null"
+            app:boxStrokeColor="@color/dark_blue"
+            app:hintTextColor="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/surnameRegistrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:lines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/valueInputMiddleNameRegistration"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/spread_registration_hint_middle_name"
+            app:helperText="@string/utils_optional_field"
+            android:textCursorDrawable="@null"
+            app:boxStrokeColor="@color/dark_blue"
+            app:hintTextColor="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/middleNameRegistrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:lines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/valueInputEmailRegistration"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/spread_registration_hint_email"
+            android:textCursorDrawable="@null"
+            app:boxStrokeColor="@color/dark_blue"
+            app:hintTextColor="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailRegistrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:lines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/valueInputPasswordRegistration"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/spread_registration_hint_password"
+            android:textCursorDrawable="@null"
+            app:boxStrokeColor="@color/dark_blue"
+            app:hintTextColor="@color/dark_blue"
+            app:layout_constraintTop_toBottomOf="@id/valueInputEmailAuth"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordRegistrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:lines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/spread_registration_sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@id/valueInputPasswordAuth"
+            app:rippleColor="@color/main_color"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spread_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.article.libraryretrofitarticle.spread.screens.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_spread_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.article.libraryretrofitarticle.spread.screens.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_spread_auth"/>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.article.libraryretrofitarticle.spread.screens.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_spread_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+</navigation>

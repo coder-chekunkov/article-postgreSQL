@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:padding="17dp">
+
+    <TextView
+        android:id="@+id/spreadHomeTitleTextView"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/spread_home_title"
+        app:layout_constraintBottom_toTopOf="@id/launchAuthButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/spreadHomeSubtitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/spread_home_subtitle"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spreadHomeTitleTextView"
+        app:layout_constraintVertical_bias="0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/launchAuthButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="@string/spread_home_auth"
+        android:textAllCaps="false"
+        android:textColor="@color/main_color"
+        app:layout_constraintBottom_toTopOf="@id/launchRegistrationButton"
+        app:rippleColor="@color/main_color"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/launchRegistrationButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main_color"
+        android:text="@string/spread_home_registration"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rippleColor="@color/main_color"
+        app:strokeColor="@color/blue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

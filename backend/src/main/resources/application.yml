@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url:
+    username:
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+    open-in-view: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret:
+    access: SecretAccess
+    refresh: RefreshAccess

@@ -1,0 +1,58 @@
+<resources>
+    <!-- BASIC -->
+    <string name="server">http://77.105.142.31:8081/</string>
+    <string name="app_name">LibraryRetrofitArticle</string>
+    <!-- TITLE -->
+    <string name="home_spread_title"> </string>
+    <string name="auth_title">Вход</string>
+    <string name="registration_title">Регистрация</string>
+    <string name="shop_title">Магазин</string>
+    <string name="basket_title">Корзина</string>
+    <string name="profile_title">Профиль</string>
+    <string name="edit_profile_title">Редактировать профиль</string>
+    <!-- ERROR -->
+    <string name="unknown_error">Неизвестная ошибка!</string>
+    <string name="unknown_error_auth">Неизвестная ошибка! Возможно, данный пользователь не существует.</string>
+    <string name="unknown_error_registration">Неизвестная ошибка! Проверьте корректность введенных данных.</string>
+    <string name="empty_field_error">Поле обязательного заполнения</string>
+    <string name="short_password_error">Пароль должен содержать не менее 8 символов</string>
+    <string name="teapot_password_error">Пароль должен содержать не менее 8 символов, прописные и строчные латинские буквы и цифры</string>
+    <string name="not_email_error">Не верный формат почты</string>
+    <!-- SUCCESSFUL -->
+    <string name="successful_auth">Авторизация прошла успешно!</string>
+    <string name="successful_registration">Регистрация прошла успешно!</string>
+    <string name="successful_edit_profile_data">Редактирование данных прошло успешно!</string>
+    <!-- UTILS -->
+    <string name="utils_optional_field">Поле необязательного заполнения</string>
+    <!-- SPREAD: HOME -->
+    <string name="spread_home_auth">Авторизация</string>
+    <string name="spread_home_registration">Регистрация</string>
+    <string name="spread_home_title">Интернет-магазин</string>
+    <string name="spread_home_subtitle">Для корректной работы приложения необходимо авторизоваться.</string>
+    <!-- SPREAD: AUTH -->
+    <string name="spread_auth_subtitle">Используйте для входа учетные данные, которые были добавлены при регистрации</string>
+    <string name="spread_auth_hint_email">Введите e-mail</string>
+    <string name="spread_auth_hint_password">Введите пароль</string>
+    <string name="spread_auth_sign_in">Войти</string>
+    <!-- SPREAD: REGISTRATION -->
+    <string name="spread_registration_subtitle">При наличии учетной записи авторизируйтесь <u>здесь</u>.</string>
+    <string name="spread_registration_hint_email">Введите e-mail</string>
+    <string name="spread_registration_hint_firstname">Введите имя</string>
+    <string name="spread_registration_hint_surname">Введите фамилию</string>
+    <string name="spread_registration_hint_middle_name">Введите отчество</string>
+    <string name="spread_registration_hint_password">Введите пароль</string>
+    <string name="spread_registration_sign_up">Зарегистрироваться</string>
+    <!-- MAIN: PROFILE INFO -->
+    <string name="main_profile_personal_data">Персональные данные</string>
+    <string name="main_profile_hint_email">E-mail</string>
+    <string name="main_profile_hint_firstname">Имя</string>
+    <string name="main_profile_hint_surname">Фамилия</string>
+    <string name="main_profile_hint_middle_name">Отчество</string>
+    <string name="main_profile_edit_personal_data"><u>Редактировать персональные данные</u></string>
+    <!-- MAIN: PROFILE INFO EDIT -->
+    <string name="main_profile_edit_personal_data_title">Введите новые данные для редактирования.</string>
+    <string name="main_profile_edit_personal_data_save_data">Сохранить</string>
+    <!-- MAIN: SHOP -->
+    <string name="main_shop_product_price">Price: %1$s₽</string>
+    <string name="main_shop_product_added">Продукт \"%1$s\" был добавлен в корзину!</string>
+</resources>
