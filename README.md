@@ -1,7 +1,7 @@
 ### :book: PostgreSQL, Spring Framework и Android для начинающего разработчика.
 
 Данная статья была написана [coder-chekunkov](https://github.com/coder-chekunkov) и [uttsvlad](https://github.com/uttsvlad) для начинающих разработчиков. Темы, которые будут затронуты в данной статье: **PostgreSQL**, **Spring Framework** и **Android**. <br/>
-Статья опубликована на информационном ресурсе "Habr" - ссылка.
+Статья опубликована на информационном ресурсе "Habr" - [ссылка](https://habr.com/ru/articles/733918/).
 
 ---
 
